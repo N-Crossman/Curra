@@ -33,15 +33,15 @@ app.add_middleware(
 )
 
 
-app.include_router(auth.router)
-app.include_router(users.router)
-app.include_router(medications.router)
-app.include_router(appointments.router)
-app.include_router(labs.router)
-app.include_router(vitals.router)
-app.include_router(journal.router)
-app.include_router(care_team.router)
-app.include_router(messages.router)
+app.include_router(auth.router, prefix="/api")
+app.include_router(users.router, prefix="/api")
+app.include_router(medications.router, prefix="/api")
+app.include_router(appointments.router, prefix="/api")
+app.include_router(labs.router, prefix="/api")
+app.include_router(vitals.router, prefix="/api")
+app.include_router(journal.router, prefix="/api")
+app.include_router(care_team.router, prefix="/api")
+app.include_router(messages.router, prefix="/api")
 
 
 @app.get("/health")
