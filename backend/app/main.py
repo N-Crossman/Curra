@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.database import engine, Base
-from app.routes import appointments, auth, care_team, journal, labs, medications, users, vitals
+from app.routes import appointments, auth, care_team, journal, labs, medications, messages, users, vitals
 
 
 @asynccontextmanager
@@ -41,6 +41,7 @@ app.include_router(labs.router)
 app.include_router(vitals.router)
 app.include_router(journal.router)
 app.include_router(care_team.router)
+app.include_router(messages.router)
 
 
 @app.get("/health")
